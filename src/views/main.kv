@@ -1,11 +1,29 @@
+#<Message>:
+#    font_size: 25
+#    orientation: 'vertical'
+#    spacing: 20
+#    padding: 20
+#
+#    MDLabel:
+#        text: "MDLabel"
+#        allow_selection: True
+#        padding: "4dp", "4dp"
+
 <Container>:
     font_size: 25
-    orientation: "vertical"
+    orientation: 'vertical'
     spacing: 20
     padding: 20
 
-    MDRectangleFlatIconButton:
-        icon: "plus"
-        size_hint: 1, None
-        text_color: 'black'
-        text: 'добавить'
+    MDBoxLayout:
+        orientation: 'horizontal'
+
+        MDTextField:
+            hint_text: 'Печатайте нежно'
+            multiline: True
+            mode: 'rectangle'
+
+        MDIconButton:
+            icon: 'send'
+            icon_size: '32sp'
+            icon_color: '#a6a7a8'
