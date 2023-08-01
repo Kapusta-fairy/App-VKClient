@@ -1,6 +1,6 @@
 from src import config
 
-colors = {
+colors = {  # этот костыль не я придумал если что)))
     'Light': {
         'StatusBar': config.COLOR_BACKGROUND,
         'AppBar': config.COLOR_BACKGROUND,

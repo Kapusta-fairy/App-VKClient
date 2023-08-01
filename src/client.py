@@ -35,6 +35,6 @@ class Client(MDApp):
         return self
 
     def __load_view(self):
-        Builder.load_file(config.KV_FILE_PATH)
-        logger.debug(f'kv file loaded from path: {config.KV_FILE_PATH}')
+        Builder.load_file('views/main.kv')
+        logger.debug(f'kv file loaded')
         return self

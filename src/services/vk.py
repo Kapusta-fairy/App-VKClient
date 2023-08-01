@@ -1,16 +1,18 @@
-from vk_api.longpoll import VkLongPoll
+from vk_api import VkApi
+from vk_api.vk_api import VkApiMethod
 
-from vk_api import VkApi, VkUpload
+from src import config
 
 
 class VK(object):
-    __slots__ = ('api', 'longpoll', 'uploader')
+    __slots__ = 'api'
 
     def __init__(self, token):
-        session = VkApi(token=token)
-        self.api = session.get_api()
-        self.uploader = VkUpload(session)
-        self.longpoll = VkLongPoll(session)
+        self.api: VkApiMethod = VkApi(token=token).get_api()
 
-    def get_chat(self):
-        return self.api.messages.getHistory(peer_id=2000000107)
+    def __iter__(self):
+        history: dict = self.api.messages.getHistory(
+            peer_id=config.VK_CHAT_PEER_ID
+        )
+        for message in history.get('items')[:10]:
+            yield message

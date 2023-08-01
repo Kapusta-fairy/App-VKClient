@@ -2,15 +2,33 @@
     font_size: 25
     orientation: 'vertical'
     spacing: 20
-    padding: 20
+    padding: 4
 
-    content: content
+    date: date
+    owner: owner
+    text: text
 
-    MDLabel:
-        id: content
-        text: "MDLabel"
-        allow_selection: True
-        padding: "4dp", "4dp"
+    MDBoxLayout:
+        orientation: 'vertical'
+
+        MDBoxLayout:
+            orientation: 'horizontal'
+
+            MDLabel:
+                id: owner
+                text: ''
+                allow_selection: True
+
+            MDLabel:
+                id: date
+                text: ''
+                allow_selection: True
+
+        MDLabel:
+            id: text
+            text: ''
+            allow_selection: True
+
 
 <Container>:
     font_size: 25
@@ -22,6 +40,7 @@
         orientation: 'horizontal'
 
         MDTextField:
+            font_size: 25
             hint_text: 'Печатайте нежно'
             multiline: True
             mode: 'rectangle'
@@ -29,3 +48,10 @@
         MDIconButton:
             icon: 'send'
             icon_size: '32sp'
+
+        MDIconButton:
+            icon: 'update'
+            icon_size: '32sp'
+
+            on_release:
+                root.update()

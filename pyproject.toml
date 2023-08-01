@@ -12,7 +12,6 @@ kivymd = "^1.1.1"
 python-dotenv = "^1.0.0"
 loguru = "^0.7.0"
 vk-api = "^11.9.9"
-pydantic = "^2.1.1"
 pydantic-settings = "^2.0.2"
 
 

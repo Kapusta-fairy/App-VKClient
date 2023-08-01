@@ -2,21 +2,18 @@ from kivymd.uix.boxlayout import MDBoxLayout
 
 from src import config
 from src.services.vk import VK
-
-
-class Message(MDBoxLayout):
-    def __init__(self, content):
-        super().__init__()
-        self.content.text = content
+from src.views.message import Message
 
 
 class Container(MDBoxLayout):
-    __slots__ = ('vk',)
+    __slots__ = 'vk'
 
     def __init__(self):
         super().__init__()
         self.vk = VK(config.VK_TOKEN)
-        msg = self.vk.get_chat().get('items')
-        for i in msg:
-            new_message = Message(i.get('text'))
-            self.add_widget(new_message, index=3)
+        self.update()
+
+    def update(self):
+        self.clear_widgets([self])
+        for message in self.vk:
+            self.add_widget(Message(message))
