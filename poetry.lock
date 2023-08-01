@@ -632,6 +632,24 @@ socks = ["pysocks (>=1.5.6,!=1.5.7,<2.0)"]
 zstd = ["zstandard (>=0.18.0)"]
 
 [[package]]
+name = "vk-api"
+version = "11.9.9"
+description = "Python модуль для создания скриптов для социальной сети Вконтакте (vk.com API wrapper)"
+optional = false
+python-versions = "*"
+files = [
+    {file = "vk_api-11.9.9-py3-none-any.whl", hash = "sha256:c71021506449afe5b9bbb1c4acb0d86b35a007ddc21678478e46fbbeabd1f3ef"},
+    {file = "vk_api-11.9.9.tar.gz", hash = "sha256:c7741e40bc05980c91ed94c84542e1e7e7370e101b5eaa74222958d4130fe3c2"},
+]
+
+[package.dependencies]
+requests = "*"
+
+[package.extras]
+vkaudio = ["beautifulsoup4"]
+vkstreaming = ["websocket-client"]
+
+[[package]]
 name = "win32-setctime"
 version = "1.1.0"
 description = "A small Python utility to set file creation time on Windows"
@@ -648,4 +666,4 @@ dev = ["black (>=19.3b0)", "pytest (>=4.6.2)"]
 [metadata]
 lock-version = "2.0"
 python-versions = "^3.11"
-content-hash = "cf6d576e8c9f2728293e6d687d07f2f320ef19c4ecfbd11871c0994bb91962e5"
+content-hash = "195ae8c0d40a765736b9eb1cb8612db6354413ed9126d87446301d0430017496"

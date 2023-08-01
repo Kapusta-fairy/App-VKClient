@@ -12,3 +12,5 @@ class Config(BaseSettings):
 
     COLOR_BACKGROUND: str
     COLOR_ELEMENTS: str
+
+    VK_TOKEN: str

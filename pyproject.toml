@@ -9,10 +9,11 @@ packages = [{include = "app_vkclient"}]
 [tool.poetry.dependencies]
 python = "^3.11"
 kivymd = "^1.1.1"
-pydantic = "^2.1.1"
 python-dotenv = "^1.0.0"
-pydantic-settings = "^2.0.2"
 loguru = "^0.7.0"
+vk-api = "^11.9.9"
+pydantic = "^2.1.1"
+pydantic-settings = "^2.0.2"
 
 
 [build-system]

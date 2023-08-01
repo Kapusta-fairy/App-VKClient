@@ -1,13 +1,16 @@
-#<Message>:
-#    font_size: 25
-#    orientation: 'vertical'
-#    spacing: 20
-#    padding: 20
-#
-#    MDLabel:
-#        text: "MDLabel"
-#        allow_selection: True
-#        padding: "4dp", "4dp"
+<Message>:
+    font_size: 25
+    orientation: 'vertical'
+    spacing: 20
+    padding: 20
+
+    content: content
+
+    MDLabel:
+        id: content
+        text: "MDLabel"
+        allow_selection: True
+        padding: "4dp", "4dp"
 
 <Container>:
     font_size: 25
@@ -26,4 +29,3 @@
         MDIconButton:
             icon: 'send'
             icon_size: '32sp'
-            icon_color: '#a6a7a8'
