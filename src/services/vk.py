@@ -16,3 +16,10 @@ class VK(object):
         )
         for message in history.get('items')[:10]:
             yield message
+
+    def get_name_by_id(self, user_id):
+        user = self.api.users.get(user_ids=user_id)[0]
+        return f'{user.get("first_name")} {user.get("last_name")}'
+
+    def send_message(self, text):
+        self.api.messages.send(chat_id=107, message=text, random_id=0)

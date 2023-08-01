@@ -1,32 +1,25 @@
 <Message>:
     font_size: 25
     orientation: 'vertical'
-    spacing: 20
-    padding: 4
+    size_hint: 1, 0.8
 
-    date: date
-    owner: owner
+    header: header
     text: text
 
     MDBoxLayout:
+        spacing: 2
+        padding: 2
         orientation: 'vertical'
 
-        MDBoxLayout:
-            orientation: 'horizontal'
-
-            MDLabel:
-                id: owner
-                text: ''
-                allow_selection: True
-
-            MDLabel:
-                id: date
-                text: ''
-                allow_selection: True
+        MDLabel:
+            id: header
+            text: ''
+            allow_selection: True
 
         MDLabel:
             id: text
             text: ''
+            size: self.size
             allow_selection: True
 
 
@@ -36,10 +29,13 @@
     spacing: 20
     padding: 20
 
+    text_input: text_input
+
     MDBoxLayout:
         orientation: 'horizontal'
 
         MDTextField:
+            id: text_input
             font_size: 25
             hint_text: 'Печатайте нежно'
             multiline: True
@@ -48,10 +44,11 @@
         MDIconButton:
             icon: 'send'
             icon_size: '32sp'
+            on_release:
+                root.send()
 
         MDIconButton:
             icon: 'update'
             icon_size: '32sp'
-
             on_release:
                 root.update()

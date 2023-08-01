@@ -16,4 +16,8 @@ class Container(MDBoxLayout):
     def update(self):
         self.clear_widgets([self])
         for message in self.vk:
-            self.add_widget(Message(message))
+            self.add_widget(Message(message, self.vk), index=3)
+
+    def send(self):
+        self.vk.send_message(self.ids.text_input.text)
+        self.update()
