@@ -3,20 +3,17 @@ from kivymd.app import MDApp
 from kivy.lang import Builder
 from kivy.core.window import Window
 
-from src import config
+from src import config, kv_files_paths
 from src.services.colors import colors
-from src.views.container import Container
+from src.controllers.send_panel import SendPanel
 
 
 class Client(MDApp):
     title = config.APP_TITLE
 
     def build(self):
-        self.__set_window()
-        self.__set_colors()
-        self.__load_view()
-
-        return Container()
+        self.__set_window().__set_colors().__load_view()
+        return SendPanel()
 
     def __set_window(self):
         minimum_width = config.MINIMUM_WIDTH
@@ -35,6 +32,6 @@ class Client(MDApp):
         return self
 
     def __load_view(self):
-        Builder.load_file('views/main.kv')
-        logger.debug(f'kv file loaded')
+        [Builder.load_file(path) for path in kv_files_paths]
+        logger.debug(f'kv files loaded')
         return self

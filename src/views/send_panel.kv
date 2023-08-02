@@ -1,0 +1,23 @@
+<SendPanel>:
+    font_size: 25
+    orientation: 'vertical'
+    spacing: 20
+    padding: 20
+
+    text_input: text_input
+
+    MDBoxLayout:
+        orientation: 'horizontal'
+
+        MDTextField:
+            id: text_input
+            font_size: 25
+            hint_text: 'Печатайте нежно'
+            multiline: True
+            mode: 'rectangle'
+
+        MDIconButton:
+            icon: 'send'
+            icon_size: '32sp'
+            on_release:
+                root.send()
