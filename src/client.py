@@ -4,7 +4,7 @@ from kivy.lang import Builder
 from kivy.core.window import Window
 
 from src import config, kv_files_paths
-from src.services.colors import colors
+from src.utils.colors import colors
 from src.controllers.send_panel import SendPanel
 
 
