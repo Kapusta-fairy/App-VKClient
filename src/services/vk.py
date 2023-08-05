@@ -11,7 +11,7 @@ class VK(object):
 
     def __init__(self, token):
         self.api: VkApiMethod = VkApi(token=token).get_api()
-        self.peer_id = config.VK_CHAT_PEER_ID
+        self.peer_id: int = config.VK_CHAT_PEER_ID
 
     def __iter__(self):
         history: dict = self.api.messages.getHistory(peer_id=self.peer_id)
@@ -19,9 +19,9 @@ class VK(object):
             yield message
 
     @cache
-    def get_name_by_id(self, user_id):
+    def get_name_by_id(self, user_id: int) -> str:
         if user := self.api.users.get(user_ids=user_id):
             return f'{user[0].get("first_name")} {user[0].get("last_name")}'
 
-    def send_message(self, text):
+    def send_message(self, text: str):
         self.api.messages.send(peer_id=self.peer_id, message=text, random_id=0)

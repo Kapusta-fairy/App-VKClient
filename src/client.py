@@ -9,15 +9,15 @@ from src.controllers.send_panel import SendPanel
 
 
 class Client(MDApp):
-    title = config.APP_TITLE
+    title: str = config.APP_TITLE
 
     def build(self):
         self.__set_window().__set_colors().__load_view()
         return SendPanel()
 
     def __set_window(self):
-        minimum_width = config.MINIMUM_WIDTH
-        minimum_height = config.MINIMUM_HEIGHT
+        minimum_width: int = config.MINIMUM_WIDTH
+        minimum_height: int = config.MINIMUM_HEIGHT
         Window.size = (minimum_width, minimum_height)
         Window.minimum_width = minimum_width
         Window.minimum_height = minimum_height

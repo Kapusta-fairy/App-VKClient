@@ -11,7 +11,7 @@ class SendPanel(MDBoxLayout):
 
     def __init__(self):
         super().__init__()
-        self.vk = VK(config.VK_TOKEN)
+        self.vk: VK = VK(config.VK_TOKEN)
         self.update()
         Clock.schedule_interval(lambda dt: self.update(), 3)
 

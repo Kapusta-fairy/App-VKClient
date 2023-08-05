@@ -3,7 +3,7 @@ import sys
 from pathlib import Path
 
 
-def get_kv_files_paths():
+def get_kv_files_paths() -> list:
     kv_files_paths = []
     views = Path(sys.path[0]).joinpath('views')
     for root, dirs, paths in os.walk(views):
